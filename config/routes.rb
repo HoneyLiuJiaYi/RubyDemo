@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  post 'picture/upload'
+
+  get 'picture/up'
+
   get 'sessions/new', :as => 'login'
   get 'login' => 'sessions#new'
 
