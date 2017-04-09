@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(:name => user_params[:name]).try(:authenticate, user_params[:password])
     if user
       # session[:current_user_id] = user.id
-      @uuid = rand(0xffffff)
+      @uuid = UUIDTools::UUID.random_create.to_s
       session[:current_uuid] = @uuid
       session[:current_user] = user.id
       redirect_to root_url
