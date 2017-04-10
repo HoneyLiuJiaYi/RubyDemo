@@ -1,4 +1,6 @@
 class PictureController < ApplicationController
+  #require BCE
+
   def up
   end
 
@@ -11,5 +13,10 @@ class PictureController < ApplicationController
 
   def tak
     UserMailer.send_mail(nil).deliver
+  end
+
+  def duanxin
+    BCE::SMS.instance.remind_44h("18800105727")
+    render :plain => '已经发送love'
   end
 end

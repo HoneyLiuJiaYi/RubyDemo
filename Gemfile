@@ -57,3 +57,5 @@ gem 'bcrypt'
 gem 'uuidtools'
 
 gem 'config'
+
+gem 'typhoeus'
